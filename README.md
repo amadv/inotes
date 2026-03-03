@@ -19,28 +19,28 @@ Even if you see that this repository hasn't been updated for a long time, rest a
 
 ## Installation
 
-Copy `notes.sh` script anywhere in your `$PATH`.
+Copy `inotes.sh` script anywhere in your `$PATH`.
 
 ## Usage
 
-By default, `notes.sh` will create new entries in `~/Maildir/personal/Notes`, which you can override by setting `$NOTES_SH_BASEDIR`.
+By default, `inotes.sh` will create new entries in `~/Maildir/personal/Notes`, which you can override by setting `$NOTES_SH_BASEDIR`.
 
 To create a new note (will open a new editor window):
 
 ```sh
-./notes.sh -n
+./inotes.sh -n
 ```
 
 To list all existing notes with their titles:
 
 ```sh
-./notes.sh -l
+./inotes.sh -l
 ```
 
 To select a note with fuzzy search and edit it (needs [fzf](https://github.com/junegunn/fzf)):
 
 ```sh
-./notes.sh -l | fzf --tac --with-nth="2..-1" | xargs -o ./notes.sh -e
+./inotes.sh -l | fzf --tac --with-nth="2..-1" | xargs -o ./inotes.sh -e
 ```
 
 
@@ -51,22 +51,22 @@ Just put the following aliases into `~/.bashrc` to make things easier:
 
 ```sh
 # Type "nn" to create a new note
-alias nn="notes.sh -n"
+alias nn="inotes.sh -n"
 
 # Type "ne" to look up and edit an existing note
-alias ne="notes.sh -l | fzf --tac --with-nth=\"2..-1\" | xargs -o notes.sh -e"
+alias ne="inotes.sh -l | fzf --tac --with-nth=\"2..-1\" | xargs -o inotes.sh -e"
 ```
 
 ## Publishing notes to HTML
 
 If you want to publish your notes to the web, you can use a simple converter from
-Markdown to HTML that I wrote, which is similar in spirit to notes.sh (simple, single-file script).
+Markdown to HTML that I wrote, which is similar in spirit to inotes.sh (simple, single-file script).
 You can find it here: [mawk](https://github.com/amadv/mawk).
 
 With it, you can do the following:
 
 ```
-notes.sh --export <note id> | mawk > result.html
+inotes.sh --export <note id> | m.awk > result.html
 ```
 
 ## License

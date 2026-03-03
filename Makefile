@@ -7,12 +7,12 @@ INSTALL_DIR = $(PREFIX)
 
 install:
 	@mkdir -p $(INSTALL_DIR)
-	@cp notes.sh $(INSTALL_DIR)/notes.sh
-	@chmod +x $(INSTALL_DIR)/notes.sh
-	@echo "Installed notes.sh to $(INSTALL_DIR)/"
+	@cp inotes.sh $(INSTALL_DIR)/inotes.sh
+	@chmod +x $(INSTALL_DIR)/inotes.sh
+	@echo "Installed inotes.sh to $(INSTALL_DIR)/"
 
 uninstall:
-	@rm -f $(INSTALL_DIR)/notes.sh
+	@rm -f $(INSTALL_DIR)/inotes.sh
 
 test:
 	@./test.sh
